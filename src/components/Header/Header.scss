@@ -1,0 +1,26 @@
+@import "../../utils/variables.scss";
+@import "../../utils/mixins.scss";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 17px 16px;
+  height: 60px;
+  background-color: #fff;
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    @include hover(transform, scale(1.1));
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    flex-direction: row;
+  }
+}

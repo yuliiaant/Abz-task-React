@@ -1,0 +1,23 @@
+@import "../../utils/variables.scss";
+@import "../../utils/mixins.scss";
+
+.get-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 140px 0;
+  padding: 16px;
+  overflow: visible;
+
+  @include onTablet {
+    padding: 0;
+  }
+
+  &__cards {
+    width: 100%;
+    margin: 50px 0;
+    overflow: visible;
+    @include pageGrid;
+  }
+}

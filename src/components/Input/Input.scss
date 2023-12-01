@@ -1,0 +1,11 @@
+@import "../../utils/variables.scss";
+
+.custom-input {
+  all: unset;
+  width: 296px;
+  height: 26px;
+  padding: 14px 16px;
+  border-radius: 4px;
+  border: 1px solid $Border;
+  color: $Black-87;
+}

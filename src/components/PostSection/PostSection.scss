@@ -1,0 +1,85 @@
+@import "../../utils/variables.scss";
+@import "../../utils/mixins.scss";
+
+.post {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 50px;
+  padding-inline: 16px;
+  padding-bottom: 100px;
+
+  &__form {
+    display: flex;
+    justify-content: center;
+    width: 328px;
+    margin: 0 auto;
+
+    @include onTablet {
+      width: 380px;
+    }
+  }
+
+  &__inputs {
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+  }
+
+  &--secondary {
+    font-size: 12px;
+    line-height: 14px;
+    color: $Secondary;
+  }
+
+  &__checkbox {
+    display: flex;
+    flex-direction: column;
+    row-gap: 11px;
+  }
+
+  &__upload {
+    height: 54px;
+    padding: 14px 16px;
+    border-radius: 4px;
+    border: 1px solid #d0cfcf;
+    color: $Black-87;
+  }
+}
+
+.phone-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-container {
+  display: flex;
+  column-gap: 12px;
+  font-size: 14px;
+}
+
+.input-checkbox {
+  all: unset;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #d0cfcf;
+  line-height: 26px;
+
+  &:checked {
+    border: 1px solid rgba(0, 189, 211, 1);
+
+    &:after {
+      position: absolute;
+      display: block;
+      width: 11px;
+      height: 11px;
+      content: '';
+      left: 4.5px;
+      top: 4.5px;
+      border-radius: 50%;
+      background-color: rgba(0, 189, 211, 1);
+    }
+  }
+}

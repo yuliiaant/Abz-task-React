@@ -1,0 +1,44 @@
+@import "https://fonts.googleapis.com/css2?family=Nunito&display=swap";
+@import "./utils/variables.scss";
+@import "./utils/mixins.scss";
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+.App {
+  background-color: $Background;
+  // min-width: 360px;
+}
+
+.section-title {
+  font-size: 40px;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 1170px;
+
+  .sections {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    overflow: visible;
+
+    @include onTablet {
+      max-width: 704px;
+    }
+
+    @include onDeskTop {
+      max-width: 904px;
+    }
+  }
+}
