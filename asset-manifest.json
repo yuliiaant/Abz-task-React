@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/%3Chttps://yuliiaant.github.io/abz-task-react/%3E/static/css/main.ffd36996.css",
-    "main.js": "/%3Chttps://yuliiaant.github.io/abz-task-react/%3E/static/js/main.c71af3c5.js",
-    "static/js/787.4a14f9e2.chunk.js": "/%3Chttps://yuliiaant.github.io/abz-task-react/%3E/static/js/787.4a14f9e2.chunk.js",
-    "static/media/background.png": "/%3Chttps://yuliiaant.github.io/abz-task-react/%3E/static/media/background.0072be321b5df04207db.png",
-    "static/media/logo.svg": "/%3Chttps://yuliiaant.github.io/abz-task-react/%3E/static/media/logo.d6bd747af95eafd09677.svg",
-    "index.html": "/%3Chttps://yuliiaant.github.io/abz-task-react/%3E/index.html",
-    "main.ffd36996.css.map": "/%3Chttps://yuliiaant.github.io/abz-task-react/%3E/static/css/main.ffd36996.css.map",
-    "main.c71af3c5.js.map": "/%3Chttps://yuliiaant.github.io/abz-task-react/%3E/static/js/main.c71af3c5.js.map",
-    "787.4a14f9e2.chunk.js.map": "/%3Chttps://yuliiaant.github.io/abz-task-react/%3E/static/js/787.4a14f9e2.chunk.js.map"
+    "main.css": "/abz-task-react/static/css/main.7c1fe977.css",
+    "main.js": "/abz-task-react/static/js/main.a0cddd31.js",
+    "static/js/787.4a14f9e2.chunk.js": "/abz-task-react/static/js/787.4a14f9e2.chunk.js",
+    "static/media/background.png": "/abz-task-react/static/media/background.0072be321b5df04207db.png",
+    "static/media/logo.svg": "/abz-task-react/static/media/logo.d6bd747af95eafd09677.svg",
+    "index.html": "/abz-task-react/index.html",
+    "main.7c1fe977.css.map": "/abz-task-react/static/css/main.7c1fe977.css.map",
+    "main.a0cddd31.js.map": "/abz-task-react/static/js/main.a0cddd31.js.map",
+    "787.4a14f9e2.chunk.js.map": "/abz-task-react/static/js/787.4a14f9e2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ffd36996.css",
-    "static/js/main.c71af3c5.js"
+    "static/css/main.7c1fe977.css",
+    "static/js/main.a0cddd31.js"
   ]
 }
