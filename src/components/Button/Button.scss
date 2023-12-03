@@ -16,8 +16,9 @@
   border-radius: 80px;
   background: var(--Primary, #f4e041);
   cursor: pointer;
+  overflow: hidden;
 
-  &:disabled {
+  &-disabled {
     background-color: rgba(180, 180, 180, 1);
     color: rgba(255, 255, 255, 0.87);
     cursor: default;

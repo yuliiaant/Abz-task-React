@@ -20,10 +20,14 @@
 
   @include onTablet {
     --columns: 2;
+    row-gap: 16px;
+    column-gap: 16px;
   }
 
   @include onDeskTop {
     --columns: 3;
+    row-gap: 29px;
+    column-gap: 29px;
   }
 }
 

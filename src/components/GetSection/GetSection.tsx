@@ -37,8 +37,6 @@ export const GetSection = () => {
     setPage((prev) => prev + 1);
   };
 
-  console.log(page);
-
   return (
     <section className="get-section" id="get-section">
       <h1 className="section-title">Working with GET request</h1>

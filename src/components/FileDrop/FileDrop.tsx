@@ -1,15 +1,23 @@
+import { File } from "buffer";
 import "./FileDrop.scss";
 import React, { useEffect, useRef, useState } from "react";
-import { FieldValues, UseFormRegister } from "react-hook-form";
 import { MdClear } from "react-icons/md";
+import classNames from "classnames";
 
 type Props = {
-  // register: UseFormRegister<FieldValues>,
-  uploadingPhoto: any,
-}
+  uploadingPhoto: (arg: File) => void;
+  files: any;
+  setFiles: (arg: any) => void;
+  isRed: boolean;
+};
 
-export const FileDrop: React.FC<Props> = ({ uploadingPhoto }) => {
-  const [files, setFiles] = useState<File[]>([]);
+export const FileDrop: React.FC<Props> = ({
+  uploadingPhoto,
+  files,
+  setFiles,
+  isRed,
+}) => {
+  // const [files, setFiles] = useState<File[]>([]);
 
   const handleFileChange = (event) => {
     const selectedFiles = event.target.files;
@@ -17,7 +25,7 @@ export const FileDrop: React.FC<Props> = ({ uploadingPhoto }) => {
       const newFiles = [...selectedFiles];
       setFiles(newFiles);
     }
-    console.log(typeof selectedFiles)
+    console.log(typeof selectedFiles);
   };
   const handleDrop = (event) => {
     event.preventDefault();
@@ -25,7 +33,9 @@ export const FileDrop: React.FC<Props> = ({ uploadingPhoto }) => {
     if (droppedFiles.length > 0) {
       const newFiles = Array.from(droppedFiles);
       setFiles(newFiles);
-      uploadingPhoto(newFiles[0])
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      uploadingPhoto(newFiles[0]);
     }
   };
 
@@ -34,10 +44,13 @@ export const FileDrop: React.FC<Props> = ({ uploadingPhoto }) => {
   };
 
   const inputRef = useRef();
+
   const handleInputClick = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     event.preventDefault();
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     inputRef.current.click();
   };
 
@@ -46,7 +59,11 @@ export const FileDrop: React.FC<Props> = ({ uploadingPhoto }) => {
   }, [files, setFiles]);
 
   return (
-    <section className="drag-drop">
+    <section
+      className={classNames("drag-drop", {
+        "input-red": isRed,
+      })}
+    >
       <div
         className={`document-uploader ${
           files.length > 0 ? "upload-box active" : "upload-box"
@@ -56,7 +73,8 @@ export const FileDrop: React.FC<Props> = ({ uploadingPhoto }) => {
       >
         <>
           <input
-          // {...register("photo")}
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
             ref={inputRef}
             type="file"
             id="browse"
@@ -65,22 +83,16 @@ export const FileDrop: React.FC<Props> = ({ uploadingPhoto }) => {
             multiple
           />
           <button
-            className="input-button"
+            type="button"
+            className={classNames("input-button", {
+              "input-red": isRed,
+            })}
             onClick={(event) => handleInputClick(event)}
           >
             Upload
           </button>
         </>
         <>
-          <input
-          // {...register("photo")}
-            type="file"
-            hidden
-            id="browse"
-            onChange={handleFileChange}
-            accept=".jpg,.jpeg"
-            multiple
-          />
           {!files.length && (
             <label htmlFor="browse" className="browse-btn">
               Upload your photo

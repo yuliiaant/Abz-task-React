@@ -8,8 +8,6 @@ type Props = {
   disabled?: boolean;
   width?: string;
   href?: string;
-  type?: buttonType,
-  handleSubmit?: (event: React.FormEvent) => void,
 };
 
 export const Button: React.FC<Props> = ({
@@ -17,11 +15,9 @@ export const Button: React.FC<Props> = ({
   disabled = false,
   width = "100px",
   href = '',
-  type = 'button',
-  handleSubmit,
 }) => {
   return (
-    <button type={type} disabled={disabled} className="button" style={{ width: width }} onClick={handleSubmit}>
+    <button disabled={disabled} className="button" style={{ width: width }}>
       <a className="button__link" href={`/${href}`}>{title}</a>
     </button>
   );
