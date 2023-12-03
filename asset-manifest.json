@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/%3Chttps://yuliiaant.github.io/abz-task-react%3E/static/css/main.8e3af4db.css",
-    "main.js": "/%3Chttps://yuliiaant.github.io/abz-task-react%3E/static/js/main.f2a2f822.js",
+    "main.css": "/%3Chttps://yuliiaant.github.io/abz-task-react%3E/static/css/main.06164cc6.css",
+    "main.js": "/%3Chttps://yuliiaant.github.io/abz-task-react%3E/static/js/main.9a5bc676.js",
     "static/js/787.4a14f9e2.chunk.js": "/%3Chttps://yuliiaant.github.io/abz-task-react%3E/static/js/787.4a14f9e2.chunk.js",
     "static/media/background.png": "/%3Chttps://yuliiaant.github.io/abz-task-react%3E/static/media/background.0072be321b5df04207db.png",
     "static/media/logo.svg": "/%3Chttps://yuliiaant.github.io/abz-task-react%3E/static/media/logo.d6bd747af95eafd09677.svg",
     "index.html": "/%3Chttps://yuliiaant.github.io/abz-task-react%3E/index.html",
-    "main.8e3af4db.css.map": "/%3Chttps://yuliiaant.github.io/abz-task-react%3E/static/css/main.8e3af4db.css.map",
-    "main.f2a2f822.js.map": "/%3Chttps://yuliiaant.github.io/abz-task-react%3E/static/js/main.f2a2f822.js.map",
+    "main.06164cc6.css.map": "/%3Chttps://yuliiaant.github.io/abz-task-react%3E/static/css/main.06164cc6.css.map",
+    "main.9a5bc676.js.map": "/%3Chttps://yuliiaant.github.io/abz-task-react%3E/static/js/main.9a5bc676.js.map",
     "787.4a14f9e2.chunk.js.map": "/%3Chttps://yuliiaant.github.io/abz-task-react%3E/static/js/787.4a14f9e2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8e3af4db.css",
-    "static/js/main.f2a2f822.js"
+    "static/css/main.06164cc6.css",
+    "static/js/main.9a5bc676.js"
   ]
 }
