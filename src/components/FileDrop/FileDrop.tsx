@@ -1,16 +1,23 @@
 import "./FileDrop.scss";
 import React, { useEffect, useRef, useState } from "react";
+import { FieldValues, UseFormRegister } from "react-hook-form";
 import { MdClear } from "react-icons/md";
 
-export const FileDrop = () => {
+type Props = {
+  // register: UseFormRegister<FieldValues>,
+  uploadingPhoto: any,
+}
+
+export const FileDrop: React.FC<Props> = ({ uploadingPhoto }) => {
   const [files, setFiles] = useState<File[]>([]);
 
   const handleFileChange = (event) => {
     const selectedFiles = event.target.files;
     if (selectedFiles && selectedFiles.length > 0) {
-      const newFiles = Array.from(selectedFiles);
+      const newFiles = [...selectedFiles];
       setFiles(newFiles);
     }
+    console.log(typeof selectedFiles)
   };
   const handleDrop = (event) => {
     event.preventDefault();
@@ -18,6 +25,7 @@ export const FileDrop = () => {
     if (droppedFiles.length > 0) {
       const newFiles = Array.from(droppedFiles);
       setFiles(newFiles);
+      uploadingPhoto(newFiles[0])
     }
   };
 
@@ -48,11 +56,12 @@ export const FileDrop = () => {
       >
         <>
           <input
+          // {...register("photo")}
             ref={inputRef}
             type="file"
             id="browse"
             onChange={handleFileChange}
-            accept=".pdf,.docx,.pptx,.txt,.xlsx"
+            accept=".jpg,.jpeg"
             multiple
           />
           <button
@@ -64,11 +73,12 @@ export const FileDrop = () => {
         </>
         <>
           <input
+          // {...register("photo")}
             type="file"
             hidden
             id="browse"
             onChange={handleFileChange}
-            accept=".pdf,.docx,.pptx,.txt,.xlsx"
+            accept=".jpg,.jpeg"
             multiple
           />
           {!files.length && (

@@ -1,20 +1,30 @@
 import React from "react";
 import "./Input.scss";
 
-type Props = {
+type TextInputProps = {
+  type: string;
   name: string;
-  type?: string;
-  pattern?: string;
+  label: string;
+  value: string;
+  changeHandler: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-export const Input: React.FC<Props> = ({ name, type = "text", pattern }) => {
+const Input = ({ type, name, label, value, changeHandler }: TextInputProps) => {
   return (
-    <input
-      type={type}
-      pattern={pattern}
-      className="custom-input"
-      placeholder={name}
-      required
-    />
+    <>
+      <input
+        className="custom-input"
+        type={type}
+        name={name}
+        placeholder={label}
+        id={name}
+        value={value}
+        onChange={changeHandler}
+        required
+      />
+      {/* <label htmlFor={name}>{label}</label> */}
+    </>
   );
 };
+
+export default Input;

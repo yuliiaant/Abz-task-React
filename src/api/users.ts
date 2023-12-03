@@ -1,30 +1,16 @@
 import { client } from "../utils/fetchClient.ts";
-import { ResponceData, User } from "../utils/types.ts";
+import { ResponceData, ResponceToken, User } from "../utils/types.ts";
 
 export const getUsers = (page: number) => {
   return client.get<ResponceData>(`/users?page=${page}&count=6`);
 };
 
 export const getToken = () => {
-  return client.get('/token');
+  return client.get<ResponceToken>('/token');
 }
 
-export const registerUser = ({
-  name,
-  email,
-  phone,
-  photo,
-  position_id,
-  position,
-}: Omit<User, "id" | "registration_timestamp">) => {
-  return client.post<User>("/users", {
-    name,
-    email,
-    phone,
-    photo,
-    position_id,
-    position,
-  });
+export const registerUser = (data, token) => {
+  return client.post(data, token);
 };
 
 // var formData = new FormData(); // file from input type='file'

@@ -4,9 +4,9 @@ export type User = {
   email: string,
   phone: string,
   position: string,
-  position_id: string,
+  position_id: number,
   registration_timestamp: number,
-  photo: string,
+  photo: any,
 }
 
 export type ResponceData = {
@@ -20,4 +20,19 @@ export type ResponceData = {
     prev_url: null | string,
   },
   users: User[],
+}
+
+export type Position = {
+  id: number,
+  name: string
+}
+
+export type ResponcePositions = {
+  success: boolean,
+  positions: Position[],
+}
+
+export type ResponceToken = {
+  success: boolean,
+  token: string,
 }
