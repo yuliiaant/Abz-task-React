@@ -22,6 +22,7 @@ export const GetSection = () => {
           (a, b) => b.registration_timestamp - a.registration_timestamp
         );
         setUsersList(sorted);
+        console.log(data)
       })
       .catch(() => {
         throw new Error();
@@ -49,10 +50,8 @@ export const GetSection = () => {
               <Card key={user.id} user={user} />
             ))}
           </div>
-          <div
-            onClick={(event) => handleButtonClick(event)}
-          >
-            <Button title={"Show more"} width="120px" disabled={isPageLast} />
+          <div onClick={(event) => handleButtonClick(event)}>
+            {!isPageLast && <Button title={"Show more"} width="120px" />}
           </div>
         </>
       )}

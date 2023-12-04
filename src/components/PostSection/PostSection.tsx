@@ -5,31 +5,15 @@ import * as postService from "../../api/users.ts";
 import { getPositions } from "../../api/positions.ts";
 import { Position } from "../../utils/types.ts";
 import Input from "../Input/Input.tsx";
-import { EMAIL_PATTERN, PHONE_PATTERN } from "../../utils/constants.ts";
+import { EMAIL_PATTERN, ErrorMessages, PHONE_PATTERN, initialUser } from "../../utils/constants.ts";
 import { Success } from "../Success/Success.tsx";
-
-const ErrorMessages = {
-  NameError: "Enter valid name",
-  EmailError: "Enter valid email",
-  PhoneError: "Enter valid phone number",
-  FileSizeError: "File size can`t be more than 5 Mb",
-  FileError: "Select file",
-};
-
-const initialUser = {
-  name: "",
-  email: "",
-  phone: "",
-  position_id: 1,
-  photo: new File([], ""),
-};
 
 export const PostSection = () => {
   const [positions, setPositions] = useState<Position[]>([]);
   const [user, setUser] = useState(initialUser);
   const [files, setFiles] = useState<File[]>([]);
-  const [isNotSuccess, setIsNotSuccess] = useState(true);
-  const [errorMessage, setErrorMessage] = useState('')
+  const [isNotSuccess, setIsNotSuccess] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const [nameError, setNameError] = useState("");
   const [emailError, setEmailError] = useState("");
@@ -66,6 +50,7 @@ export const PostSection = () => {
     setEmailError("");
     setPhonelError("");
     setFileError("");
+    setErrorMessage("");
   };
 
   const handleSubmit = (event: React.FormEvent) => {
@@ -101,19 +86,13 @@ export const PostSection = () => {
     postService
       .getToken()
       .then((res) => {
-        postService
-          .registerUser(user, res.token)
-          .then((res) => {
-            if (res.success) {
-              setIsNotSuccess(false);
-            } else {
-              setErrorMessage(res.message);
-            }
-            console.log(res);
-          })
-          .catch((err) => {
-            console.log(err);
-          });
+        postService.registerUser(user, res.token).then((res) => {
+          if (res.success) {
+            setIsNotSuccess(true);
+          } else {
+            setErrorMessage(res.message);
+          }
+        });
       })
       .finally(() => {
         clearErrors();
@@ -122,90 +101,94 @@ export const PostSection = () => {
 
   return (
     <section className="post" id="post-section">
-      {!isNotSuccess ? (
+      {isNotSuccess ? (
         <>
-        <h1 className="section-title">User successfully registered</h1>
-        <Success />
+          <h1 className="section-title">User successfully registered</h1>
+          <Success />
         </>
       ) : (
         <>
-        <h1 className="section-title">Working with POST request</h1>
-        <form className="post__form" onSubmit={(event) => handleSubmit(event)}>
-          <div className="post__inputs">
-            {!isNotSuccess && <div>Success!</div>}
-            <div className="input-message">
-              <Input
-                type="text"
-                name="name"
-                label="Your name"
-                value={user.name}
-                changeHandler={changeHandler}
-                isRed={!!nameError}
-              />
-              {nameError && <span className="error-text">{nameError}</span>}
-            </div>
-            <div className="input-message">
-              <Input
-                type="text"
-                name="email"
-                label="Email"
-                value={user.email}
-                changeHandler={changeHandler}
-                isRed={!!emailError}
-              />
-              {emailError && <span className="error-text">{emailError}</span>}
-            </div>
-            <div>
-              <div className="phone-container">
+          <h1 className="section-title">Working with POST request</h1>
+          <form
+            className="post__form"
+            onSubmit={(event) => handleSubmit(event)}
+          >
+            <div className="post__inputs">
+              <div className="input-message">
                 <Input
-                  type="tel"
-                  name="phone"
-                  label="Phone"
-                  value={user.phone}
+                  type="text"
+                  name="name"
+                  label="Your name"
+                  value={user.name}
                   changeHandler={changeHandler}
-                  isRed={!!phonelError}
+                  isRed={!!nameError}
                 />
-                {phonelError && (
-                  <span className="error-text">{phonelError}</span>
-                )}
+                {nameError && <span className="error-text">{nameError}</span>}
               </div>
-              <span className="post--secondary">+380XXXXXXXXX</span>
-            </div>
-            <div className="post__checkbox">
-              <p>Select your position</p>
-              {positions.map((position) => (
-                <div className="input-container" key={position.id}>
-                  <input
-                    type="radio"
-                    className="input-checkbox"
-                    name="position_id"
-                    value={position.id}
-                    checked={position.id === user.position_id}
-                    onChange={changeHandler}
+              <div className="input-message">
+                <Input
+                  type="text"
+                  name="email"
+                  label="Email"
+                  value={user.email}
+                  changeHandler={changeHandler}
+                  isRed={!!emailError}
+                />
+                {emailError && <span className="error-text">{emailError}</span>}
+              </div>
+              <div>
+                <div className="phone-container">
+                  <Input
+                    type="tel"
+                    name="phone"
+                    label="Phone"
+                    value={user.phone}
+                    changeHandler={changeHandler}
+                    isRed={!!phonelError}
                   />
-                  <span>{position.name}</span>
+                  {phonelError && (
+                    <span className="error-text">{phonelError}</span>
+                  )}
                 </div>
-              ))}
+                <span className="post--secondary">+380XXXXXXXXX</span>
+              </div>
+              <div className="post__checkbox">
+                <p>Select your position</p>
+                {positions.map((position) => (
+                  <div className="input-container" key={position.id}>
+                    <input
+                      type="radio"
+                      className="input-checkbox"
+                      name="position_id"
+                      value={position.id}
+                      checked={position.id === user.position_id}
+                      onChange={changeHandler}
+                    />
+                    <span>{position.name}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="input-message">
+                <FileDrop
+                  uploadingPhoto={uploadingPhoto}
+                  setFiles={setFiles}
+                  files={files}
+                  isRed={!!fileError}
+                />
+                {fileError && <span className="error-text">{fileError}</span>}
+              </div>
+              {errorMessage && (
+                <div className="error-text" style={{ fontSize: "16px" }}>
+                  {errorMessage}
+                </div>
+              )}
+              <div>
+                <button type="submit" className="button">
+                  Sign up
+                </button>
+              </div>
             </div>
-            <div className="input-message">
-              <FileDrop
-                uploadingPhoto={uploadingPhoto}
-                setFiles={setFiles}
-                files={files}
-                isRed={!!fileError}
-              />
-              {fileError && <span className="error-text">{fileError}</span>}
-            </div>
-            {errorMessage && (
-              <div className="error-text" style={{fontSize: '16px'}}>{errorMessage}</div>
-            )}
-            <div>
-              <button type="submit" className="button">
-                Sign up
-              </button>
-            </div>
-          </div>
-        </form>
+          </form>
         </>
       )}
     </section>

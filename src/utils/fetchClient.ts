@@ -29,31 +29,11 @@ function request<T>(
     .then(() => fetch(BASE_URL + url, options))
     .then((response) => {
       if (!response.ok) {
-        throw new Error();
+        console.log('error');
       }
 
       return response.json();
     });
-}
-
-function sendUsers(data: User, token: string) {
-  try {
-    const formData = new FormData();
-    for (const key in data) {
-      formData.append(key, data[key]);
-    }
-    fetch("https://frontend-test-assignment-api.abz.agency/api/v1/users", {
-      method: "POST",
-      headers: { Token: token },
-      body: formData,
-    })
-      .then((response) => response.json())
-      .then((message) => {
-        console.log(message);
-      });
-  } catch (error) {
-    console.log(error);
-  }
 }
 
 function sendUser(data: User, token: string) {
@@ -69,7 +49,7 @@ function sendUser(data: User, token: string) {
     }))
     .then((response) => {
       if (!response.ok) {
-        console.log('error')
+        console.log('error');
       }
       return response.json();
     });

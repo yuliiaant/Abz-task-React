@@ -17,8 +17,8 @@ export const Card: React.FC<Props> = ({ user }) => {
       </div>
       <div className="card__description">
         <div className="tooltip">
-        <span className="card__description--position part">{position}</span>
-        <span className="tooltiptext">{position}</span>
+          <span className="card__description--position part">{position}</span>
+          <span className="tooltiptext">{position}</span>
         </div>
         <div className="tooltip">
           <a href="" className="card__description--email part">

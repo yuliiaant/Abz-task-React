@@ -34,6 +34,6 @@
     color: unset;
     cursor: inherit;
 
-    @include hover(transform, scale(1.1))
+    @include hover(transform, scale(1.1));
   }
 }

@@ -11,19 +11,26 @@ type TextInputProps = {
   isRed?: boolean;
 };
 
-const Input = ({ type, name, label, value, changeHandler, isRed }: TextInputProps) => {
+const Input = ({
+  type,
+  name,
+  label,
+  value,
+  changeHandler,
+  isRed,
+}: TextInputProps) => {
   return (
     <input
-        className={classNames("custom-input", {
-          'input-red': isRed,
-        })}
-        type={type}
-        name={name}
-        placeholder={label}
-        id={name}
-        value={value}
-        onChange={changeHandler}
-      />
+      className={classNames("custom-input", {
+        "input-red": isRed,
+      })}
+      type={type}
+      name={name}
+      placeholder={label}
+      id={name}
+      value={value}
+      onChange={changeHandler}
+    />
   );
 };
 

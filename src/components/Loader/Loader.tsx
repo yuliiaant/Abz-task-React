@@ -1,4 +1,4 @@
 import React from "react";
-import './Loader.scss';
+import "./Loader.scss";
 
 export const Loader = () => <div className="loader"></div>;

@@ -1,6 +1,6 @@
 import { File } from "buffer";
 import "./FileDrop.scss";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { MdClear } from "react-icons/md";
 import classNames from "classnames";
 

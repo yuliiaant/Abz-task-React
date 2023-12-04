@@ -14,11 +14,13 @@ export const Button: React.FC<Props> = ({
   title,
   disabled = false,
   width = "100px",
-  href = '',
+  href = "",
 }) => {
   return (
     <button disabled={disabled} className="button" style={{ width: width }}>
-      <a className="button__link" href={`/${href}`}>{title}</a>
+      <a className="button__link" href={`/${href}`}>
+        {title}
+      </a>
     </button>
   );
 };
