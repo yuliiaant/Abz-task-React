@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/abz-task-react/static/css/main.9543c7b5.css",
-    "main.js": "/abz-task-react/static/js/main.c59f08e6.js",
+    "main.js": "/abz-task-react/static/js/main.fb4eb1af.js",
     "static/js/787.4a14f9e2.chunk.js": "/abz-task-react/static/js/787.4a14f9e2.chunk.js",
     "static/media/background.webp": "/abz-task-react/static/media/background.e8aeabc629d43cf4e24a.webp",
     "static/media/logo.svg": "/abz-task-react/static/media/logo.d6bd747af95eafd09677.svg",
     "index.html": "/abz-task-react/index.html",
     "main.9543c7b5.css.map": "/abz-task-react/static/css/main.9543c7b5.css.map",
-    "main.c59f08e6.js.map": "/abz-task-react/static/js/main.c59f08e6.js.map",
+    "main.fb4eb1af.js.map": "/abz-task-react/static/js/main.fb4eb1af.js.map",
     "787.4a14f9e2.chunk.js.map": "/abz-task-react/static/js/787.4a14f9e2.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9543c7b5.css",
-    "static/js/main.c59f08e6.js"
+    "static/js/main.fb4eb1af.js"
   ]
 }
