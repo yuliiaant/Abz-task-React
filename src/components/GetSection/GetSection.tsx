@@ -22,7 +22,6 @@ export const GetSection = () => {
           (a, b) => b.registration_timestamp - a.registration_timestamp
         );
         setUsersList(sorted);
-        console.log(data)
       })
       .catch(() => {
         throw new Error();
