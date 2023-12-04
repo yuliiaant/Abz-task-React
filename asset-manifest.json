@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/abz-task-react/static/css/main.b107423d.css",
-    "main.js": "/abz-task-react/static/js/main.35b54729.js",
+    "main.css": "/abz-task-react/static/css/main.9543c7b5.css",
+    "main.js": "/abz-task-react/static/js/main.5034f828.js",
     "static/js/787.4a14f9e2.chunk.js": "/abz-task-react/static/js/787.4a14f9e2.chunk.js",
-    "static/media/background.png": "/abz-task-react/static/media/background.0072be321b5df04207db.png",
+    "static/media/background.webp": "/abz-task-react/static/media/background.e8aeabc629d43cf4e24a.webp",
     "static/media/logo.svg": "/abz-task-react/static/media/logo.d6bd747af95eafd09677.svg",
     "index.html": "/abz-task-react/index.html",
-    "main.b107423d.css.map": "/abz-task-react/static/css/main.b107423d.css.map",
-    "main.35b54729.js.map": "/abz-task-react/static/js/main.35b54729.js.map",
+    "main.9543c7b5.css.map": "/abz-task-react/static/css/main.9543c7b5.css.map",
+    "main.5034f828.js.map": "/abz-task-react/static/js/main.5034f828.js.map",
     "787.4a14f9e2.chunk.js.map": "/abz-task-react/static/js/787.4a14f9e2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b107423d.css",
-    "static/js/main.35b54729.js"
+    "static/css/main.9543c7b5.css",
+    "static/js/main.5034f828.js"
   ]
 }
