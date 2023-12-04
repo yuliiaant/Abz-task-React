@@ -1,5 +1,47 @@
+## Assignment for abz.agency
+
+## [DEMO](https://yuliiaant.github.io/abz-task-react/)
+
+## The challenge
+
+- Working with REST API (GET).
+a. Implement the “Working with a GET request” block according to the mockup and API
+documentation. Display 6 users on the API request result page. The "Show more" button
+should be hidden when the last page of API query results is reached. Users are sorted by
+registration date (the newest first).
+b. To display radio buttons on the registration form, use the GET /positions method from the API
+documentation.
+- Working with REST API (POST) – registration form block “Working with a POST Request”
+a. Implement front-end validation in accordance with mockups and API documentation.
+b. Implement the business logic of the registration form in accordance with mockups and API
+documentation.
+c. After successful registration, update the list of users in the “Working with a GET request” block.
+If the “Show more” button has been clicked (i.e. more than one page of users has been loaded
+from the API), collapse all and display only the first page of the result of the GET request. As a
+result, the new user will be displayed first and you will be able to check the correctness of the
+form without reloading the page.
+
+## Key tecnologies
+
+- React.js
+- TypeScript
+- Fetch
+- REST API
+- SCSS/BEM
+
+### Links
+
+- [Live Site URL](https://yuliiaant.github.io/abz-task-react/)
+- [Task](https://drive.google.com/file/d/11XPGP9wrHB-B5aLlBCRLXHVA2yvM2QhY/view)
+- [Design](https://www.figma.com/file/ykJhQGVFGbQBEQZzuktwvm/TESTTASK---2022?node-id=3322%3A74161&mode=dev)
+
+## Author
+
+- [Linkedin](https://www.linkedin.com/in/yuliia-antonenko-7b6797213/)
+
+---------------
+
 # Getting Started with Create React App
-1
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
