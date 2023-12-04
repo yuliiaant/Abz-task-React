@@ -15,7 +15,7 @@ export const Description = () => {
         mind. They should also be excited to learn, as the world of Front-End
         Development keeps evolving.
       </p>
-      <Button title={"Sign up"} href="#post" />
+      <Button title={"Sign up"} href="#post-section" />
     </section>
   );
 };
