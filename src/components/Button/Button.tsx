@@ -18,7 +18,7 @@ export const Button: React.FC<Props> = ({
 }) => {
   return (
     <button disabled={disabled} className="button" style={{ width: width }}>
-      <a className="button__link" href={`/${href}`}>
+      <a className="button__link" href={`${href}`}>
         {title}
       </a>
     </button>
